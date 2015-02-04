@@ -10,12 +10,12 @@ Security Group Catalog
 This module contains the following security group templates for you to use as modules in
 service Terraform templates.
 
-- `sg_common` - this is a security group that all systems should use. It is usually included in
+- [sg_common](https://github.com/solarce/tf_aws_sg/tree/master/sg_common) - this is a security group that all systems should use. It is usually included in
      the other modules.
     - It allows incoming TCP 22 (SSH)
-- `sg_web` - this is a security group for web applications
+- [sg_web](https://github.com/solarce/tf_aws_sg/tree/master/sg_web) - this is a security group for web applications
     - It allows incoming TCP 80 (HTTP), TCP 443 (HTTPS), TCP 8080 (HTTP/S), TCP 1099 (JMX)
-- `sg_zookeeper` - this is a security group for web applications
+- [sg_zookeeper](https://github.com/solarce/tf_aws_sg/tree/master/sg_zookeeper) - this is a security group for web applications
     - It Allows incoming TCP 2181, TCP 2888, TCP 3888, TCP 7199 (Used for zk JMX)
 
 Usage
@@ -23,7 +23,7 @@ Usage
 
 You can use these in your terraform template with the following steps. 
 
-1. Adding a module resource to your template, e.g. `main.tf`
+1.) Adding a module resource to your template, e.g. `main.tf`
 
 ```
 module "sg_web" {
@@ -37,7 +37,7 @@ module "sg_web" {
 }
 ``` 
 
-2. Setting values for the following variables, either through `terraform.tfvars` or `-var` arguments on the CLI
+2.) Setting values for the following variables, either through `terraform.tfvars` or `-var` arguments on the CLI
 
 - aws_access_key
 - aws_secret_key
