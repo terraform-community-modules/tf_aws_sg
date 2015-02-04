@@ -5,18 +5,6 @@ provider "aws" {
     region = "${var.aws_region}"
 }
 
-// Pull in sg_common
-// The security group for common server rules
-module "sg_common" {
-  source = "github.com/solarce/tf_aws_sg//sg_common"
-  security_group_name = "${var.security_group_name}-common"
-  aws_access_key = "${var.aws_access_key}"
-  aws_secret_key = "${var.aws_secret_key}"
-  aws_region = "${var.aws_region}"
-  vpc_id = "${var.vpc_id}"
-  source_cidr_block = "${var.source_cidr_block}"
-}
-
 // Security Group Resource for Module
 resource "aws_security_group" "main_security_group" {
     name = "${var.security_group_name}"
