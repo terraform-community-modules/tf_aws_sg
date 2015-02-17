@@ -1,5 +1,5 @@
-tf_aws_sg aka the terraform_module_aws_security_group
-===================================
+tf_aws_sg
+======================
 
 A Terraform module which contains a number of common configurations for AWS security groups.
 * It assumes you're putting your SGs in a VPC.
@@ -16,6 +16,8 @@ service Terraform templates.
     - It allows incoming TCP 22 (SSH), TCP 80 (HTTP), TCP 443 (HTTPS), TCP 8080 (HTTP/S), TCP 1099 (JMX)
 - [sg_zookeeper](https://github.com/solarce/tf_aws_sg/tree/master/sg_zookeeper) - this is a security group for web applications
     - It Allows incoming TCP 22 (SSH), TCP 2181, TCP 2888, TCP 3888, TCP 7199 (Used for zk JMX)
+- [sg_https_only](https://github.com/solarce/tf_aws_sg/tree/master/sg_https_only) - This is a security group for external HTTPS ELBs
+    - It only allows incoming TCP 443 (HTTPS)
 
 Usage
 ------
