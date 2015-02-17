@@ -10,6 +10,8 @@ Security Group Catalog
 This module contains the following security group templates for you to use as modules in
 service Terraform templates.
 
+- [sg_memcached](https://github.com/solarce/tf_aws_sg/tree/master/sg_memcached)
+    - It allows incoming TCP 22 (SSH) and TCP 11211 (memcached)
 - [sg_web](https://github.com/solarce/tf_aws_sg/tree/master/sg_web) - this is a security group for web applications
     - It allows incoming TCP 22 (SSH), TCP 80 (HTTP), TCP 443 (HTTPS), TCP 8080 (HTTP/S), TCP 1099 (JMX)
 - [sg_zookeeper](https://github.com/solarce/tf_aws_sg/tree/master/sg_zookeeper) - this is a security group for web applications
