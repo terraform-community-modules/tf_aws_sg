@@ -46,3 +46,14 @@ module "sg_web" {
 - security_group_name
 - vpc_id
 - source_cidr_block
+
+Authors
+=======
+
+Created and maintained by [Brandon Burton](https://github.com/solarce)
+(brandon@inatree.org).
+
+License
+=======
+
+Apache 2 Licensed. See LICENSE for full details.
