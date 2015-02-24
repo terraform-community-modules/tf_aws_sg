@@ -1,22 +1,24 @@
-sg_web terraform module
-=======================
+sg_consul terraform module
+==============================
 
-A terraform module with contains rules for a common web application deployment, which 
-you can use with your service Terraform template.
+A Terraform security group module for Consul
+
 
 Ports
 -----
-- TCP 22 (SSH)
-- TCP 80 (HTTP)
-- TCP 443 (HTTPS)
-- TCP 1099 (JMX)
-- TCP 8080 (HTTP/S)
+- TCP 22
+- TCP 8400 (Consul RPC)
+- TCP 8500 (Consul HTTP API)
+- TCP 8600 (Consul DNS)
+- UDP 8600 (Consul DNS)
 
 Input Variables
 ---------------
 
 - `security_group_name` - The name for your security group, e.g. `bluffdale_web_stage1`
 - `vpc_id` - The VPC this security group should be created in.
+- `source_cidr_block` - The source CIDR block, defaults to `0.0.0.0/0`
+   for this module.
 
 Usage
 -----
@@ -27,8 +29,8 @@ You can use these in your terraform template with the following steps.
 
 ```
 module "sg_web" {
-  source = "github.com/terraform-community-modules/tf_aws_sg//sg-web"
-  security_group_name = "${var.security_group_name}-web"
+  source = "github.com/terraform-community-modules/tf_aws_sg//sg-consul"
+  security_group_name = "${var.security_group_name}-consul"
   aws_access_key = "${var.aws_access_key}"
   aws_secret_key = "${var.aws_secret_key}"
   aws_region = "${var.aws_region}"
