@@ -20,7 +20,8 @@ service Terraform templates.
     - It only allows incoming TCP 443 (HTTPS)
 - [sg_consul](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_consul) - This is a security group for Consul clusters
     - It allows incoming TCP 22 (SSH), TCP 8400 (Consul RPC), TCP 8500 (Consul HTTP), TCP/UDP 8600 (Consul DNS)
-
+- [sg_redis](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_redis) - This is a security group for Consul clusters
+    - It allows incoming TCP 22 (SSH) and TCP 6379 (redis)
 
 Usage
 ------
