@@ -23,7 +23,7 @@ service Terraform templates.
 - [sg_redis](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_redis) - This is a security group for Redis clusters
     - It allows incoming TCP 22 (SSH) and TCP 6379 (redis)
 - [sg_kafka](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_kafka) - This is a security group for Kafka clusters
-    - It allows incoming TCP 22 (SSH) and TCP 6667 (Kafka broker)
+    - It allows incoming TCP 22 (SSH), TCP 6667 (Kafka broker) TCP 9092 (Kafka broker)
 - [sg_cassandra](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_cassandra) - This is a security group for Cassandra clusters
     - It allows incoming TCP 22 (SSH), TCP 7199 (JMX), 9042 (Cassandra clients), 9160 (Cassandra Thrift clients)
 
