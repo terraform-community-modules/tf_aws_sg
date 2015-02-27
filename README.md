@@ -29,6 +29,8 @@ service Terraform templates.
     - It allows incoming TCP 22 (SSH), TCP 7199 (JMX), 9042 (Cassandra clients), 9160 (Cassandra Thrift clients)
 - [sg_mysql](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_mysql) - This is a security group for MySQL
     - It allows incoming TCP 22 (SSH), TCP 3306 (MySQL)
+- [sg_elasticsearch](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/elasticsearch) - This is a security group for ElasticSearch
+    - It allows incoming TCP 22 (SSH), TCP 9200 (REST Interface), 9300 (Java Interface)
 
 Usage
 ------
