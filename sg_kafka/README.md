@@ -8,6 +8,7 @@ Ports
 -----
 - TCP 22
 - TCP 6667 (Kafka broker)
+- TCP 9092 (Kafka broker)
 
 Input Variables
 ---------------
