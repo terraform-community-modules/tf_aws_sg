@@ -41,6 +41,30 @@ resource "aws_security_group" "main_security_group" {
         cidr_blocks = ["${var.source_cidr_block}"]
     }
 
+    // allow traffic for TCP 8300 (Server RPC)
+    ingress {
+        from_port = 8300
+        to_port = 8300
+        protocol = "tcp"
+        cidr_blocks = ["${var.source_cidr_block}"]
+    }
+
+    // allow traffic for TCP 8301 (Serf LAN)
+    ingress {
+        from_port = 8301
+        to_port = 8301
+        protocol = "tcp"
+        cidr_blocks = ["${var.source_cidr_block}"]
+    }
+
+    // allow traffic for UDP 8301 (Serf LAN)
+    ingress {
+        from_port = 8301
+        to_port = 8301
+        protocol = "udp"
+        cidr_blocks = ["${var.source_cidr_block}"]
+    }
+
     // allow traffic for TCP 8400 (Consul RPC)
     ingress {
         from_port = 8400

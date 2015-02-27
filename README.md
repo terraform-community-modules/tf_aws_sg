@@ -19,7 +19,8 @@ service Terraform templates.
 - [sg_https_only](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_https_only) - This is a security group for external HTTPS ELBs
     - It only allows incoming TCP 443 (HTTPS)
 - [sg_consul](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_consul) - This is a security group for Consul clusters
-    - It allows incoming TCP 22 (SSH), TCP 8400 (Consul RPC), TCP 8500 (Consul HTTP), TCP/UDP 8600 (Consul DNS)
+    - It allows incoming TCP 22 (SSH), TCP 8300 (Server RPC), TCP 8301 (Serf LAN), and UDP 8301 (Serf LAN)
+    - It allows incoming TCP 8400 (Consul RPC), TCP 8500 (Consul HTTP), TCP 8600 (Consul DNS), and UDP 8600 (Consul DNS)
 - [sg_redis](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_redis) - This is a security group for Redis clusters
     - It allows incoming TCP 22 (SSH) and TCP 6379 (redis)
 - [sg_kafka](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_kafka) - This is a security group for Kafka clusters
