@@ -1,27 +1,20 @@
-sg_consul terraform module
-==============================
+sg_elasticsearch terraform module
+=================================
 
-A Terraform security group module for Consul
-
+A terraform module with contains rules for a elasticsearch cluster
 
 Ports
 -----
-- TCP 22
-- TCP 8300 (Server RPC)
-- TCP 8301 (Serf LAN)
-- UDP 8301 (Serf LAN)
-- TCP 8400 (Consul RPC)
-- TCP 8500 (Consul HTTP API)
-- TCP 8600 (Consul DNS)
-- UDP 8600 (Consul DNS)
+
+- TCP 22 (SSH)
+- TCP 9200 (REST Interface)
+- TCP 9300 (Java Interface)
 
 Input Variables
 ---------------
 
-- `security_group_name` - The name for your security group, e.g. `bluffdale_web_stage1`
+- `security_group_name` - The name for your security group.
 - `vpc_id` - The VPC this security group should be created in.
-- `source_cidr_block` - The source CIDR block, defaults to `0.0.0.0/0`
-   for this module.
 
 Usage
 -----
@@ -31,9 +24,9 @@ You can use these in your terraform template with the following steps.
 1. Adding a module resource to your template, e.g. `main.tf`
 
 ```
-module "sg_web" {
-  source = "github.com/terraform-community-modules/tf_aws_sg//sg-consul"
-  security_group_name = "${var.security_group_name}-consul"
+module "sg_elasticsearch" {
+  source = "github.com/terraform-community-modules/tf_aws_sg//sg-elasticsearch"
+  security_group_name = "${var.security_group_name}-elasticsearch"
   aws_access_key = "${var.aws_access_key}"
   aws_secret_key = "${var.aws_secret_key}"
   aws_region = "${var.aws_region}"
