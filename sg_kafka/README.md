@@ -26,7 +26,7 @@ You can use these in your terraform template with the following steps.
 1. Adding a module resource to your template, e.g. `main.tf`
 
 ```
-module "sg_web" {
+module "sg-kafka" {
   source = "github.com/terraform-community-modules/tf_aws_sg//sg-kafka"
   security_group_name = "${var.security_group_name}-kafka"
   aws_access_key = "${var.aws_access_key}"
