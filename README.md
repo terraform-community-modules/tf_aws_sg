@@ -33,6 +33,10 @@ service Terraform templates.
     - It allows incoming TCP 22 (SSH), TCP 9200 (REST Interface), 9300 (Java Interface)
 - [sg_storm](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_storm) - This is a security group for Apache Storm Cluster
     - It allows incoming TCP 22 (SSH), TCP 6627 (Default Nimbus port), TCP 8080 (Storm UI), TCP 6700, 6701, 6702, 6703 (Default Supervisor port)
+- [sg_zipkin](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_zipkin) - This is a security group for Zipkin
+    - It allows incoming TCP 22 (SSH), TCP 9990 (zipkin admin port collector), TCP 9901 (zipkin admin port query)
+    - It allows TCP 9991 (zipkin admin port web), TCP 9411 (zipkin query port), TCP 8080 (zipkin web port)
+
 
 Usage
 ------
