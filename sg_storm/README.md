@@ -28,7 +28,7 @@ You can use these in your terraform template with the following steps.
 
 ```
 module "sg_storm" {
-  source = "github.com/terraform-community-modules/tf_aws_sg//sg-storm"
+  source = "github.com/terraform-community-modules/tf_aws_sg//sg_storm"
   security_group_name = "${var.security_group_name}-storm"
   aws_access_key = "${var.aws_access_key}"
   aws_secret_key = "${var.aws_secret_key}"

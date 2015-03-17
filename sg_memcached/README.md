@@ -24,7 +24,7 @@ You can use these in your terraform template with the following steps.
 
 ```
 module "sg_web" {
-  source = "github.com/terraform-community-modules/tf_aws_sg//sg-memcached"
+  source = "github.com/terraform-community-modules/tf_aws_sg//sg_memcached"
   security_group_name = "${var.security_group_name}-memcached"
   aws_access_key = "${var.aws_access_key}"
   aws_secret_key = "${var.aws_secret_key}"
