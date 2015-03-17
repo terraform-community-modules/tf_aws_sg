@@ -27,7 +27,7 @@ You can use these in your terraform template with the following steps.
 
 ```
 module "sg_zookeeper" {
-  source = "github.com/terraform-community-modules/tf_aws_sg//sg-zookeeper"
+  source = "github.com/terraform-community-modules/tf_aws_sg//sg_zookeeper"
   security_group_name = "${var.security_group_name}-zookeeper"
   aws_access_key = "${var.aws_access_key}"
   aws_secret_key = "${var.aws_secret_key}"

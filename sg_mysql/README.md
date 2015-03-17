@@ -24,7 +24,7 @@ You can use these in your terraform template with the following steps.
 
 ```
 module "sg_mysql" {
-  source = "github.com/terraform-community-modules/tf_aws_sg//sg-mysql"
+  source = "github.com/terraform-community-modules/tf_aws_sg//sg_mysql"
   security_group_name = "${var.security_group_name}-mysql"
   aws_access_key = "${var.aws_access_key}"
   aws_secret_key = "${var.aws_secret_key}"

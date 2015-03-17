@@ -27,7 +27,7 @@ You can use these in your terraform template with the following steps.
 
 ```
 module "sg_web" {
-  source = "github.com/terraform-community-modules/tf_aws_sg//sg-web"
+  source = "github.com/terraform-community-modules/tf_aws_sg//sg_web"
   security_group_name = "${var.security_group_name}-web"
   aws_access_key = "${var.aws_access_key}"
   aws_secret_key = "${var.aws_secret_key}"

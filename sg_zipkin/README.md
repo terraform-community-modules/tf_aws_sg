@@ -31,7 +31,7 @@ You can use these in your terraform template with the following steps.
 
 ```
 module "sg_zipkin" {
-  source = "github.com/terraform-community-modules/tf_aws_sg//sg-zipkin"
+  source = "github.com/terraform-community-modules/tf_aws_sg//sg_zipkin"
   security_group_name = "${var.security_group_name}-zipkin"
   aws_access_key = "${var.aws_access_key}"
   aws_secret_key = "${var.aws_secret_key}"
