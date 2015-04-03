@@ -14,7 +14,7 @@ service Terraform templates.
     - It allows incoming TCP 22 (SSH) and TCP 11211 (memcached)
 - [sg_web](https://github.com/solarce/terraform-community-modules/tree/master/sg_web) - this is a security group for web applications
     - It allows incoming TCP 22 (SSH), TCP 80 (HTTP), TCP 443 (HTTPS), TCP 8080 (HTTP/S), TCP 1099 (JMX)
-- [sg_zookeeper](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_zookeeper) - this is a security group for web applications
+- [sg_zookeeper](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_zookeeper) - this is a security group for zookeeper
     - It Allows incoming TCP 22 (SSH), TCP 2181, TCP 2888, TCP 3888, TCP 7199 (Used for zk JMX)
 - [sg_https_only](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_https_only) - This is a security group for external HTTPS ELBs
     - It only allows incoming TCP 443 (HTTPS)
