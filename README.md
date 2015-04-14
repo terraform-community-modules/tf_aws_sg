@@ -39,6 +39,8 @@ service Terraform templates.
 - [sg_ldap](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_ldap) - This is a security group for LDAP
     - It allows incoming TCP 22 (SSH)
     - It allows incoming TCP 636 (LDAPS)
+- [sg_ldaps_only](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_ldaps_only) - This is a security group for LDAPS only
+    - It allows incoming TCP 636 (LDAPS)
 
 
 Usage
