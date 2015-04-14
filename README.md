@@ -36,6 +36,9 @@ service Terraform templates.
 - [sg_zipkin](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_zipkin) - This is a security group for Zipkin
     - It allows incoming TCP 22 (SSH), TCP 9990 (zipkin admin port collector), TCP 9901 (zipkin admin port query)
     - It allows TCP 9991 (zipkin admin port web), TCP 9411 (zipkin query port), TCP 8080 (zipkin web port)
+- [sg_ldap](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_ldap) - This is a security group for LDAP
+    - It allows incoming TCP 22 (SSH)
+    - It allows incoming TCP 636 (LDAPS)
 
 
 Usage
