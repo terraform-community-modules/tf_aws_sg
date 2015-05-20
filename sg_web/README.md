@@ -11,6 +11,7 @@ Ports
 - TCP 443 (HTTPS)
 - TCP 1099 (JMX)
 - TCP 8080 (HTTP/S)
+- TCP 8181 (HTTP/S)
 
 Input Variables
 ---------------
