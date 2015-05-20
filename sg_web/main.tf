@@ -68,4 +68,12 @@ resource "aws_security_group" "main_security_group" {
         cidr_blocks = ["${var.source_cidr_block}"]
     }
 
+    // allow traffic for TCP 8181
+    ingress {
+        from_port = 8181
+        to_port = 8181
+        protocol = "tcp"
+        cidr_blocks = ["${var.source_cidr_block}"]
+    }
+
 }
