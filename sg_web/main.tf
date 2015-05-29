@@ -68,4 +68,10 @@ resource "aws_security_group" "main_security_group" {
         cidr_blocks = ["${var.source_cidr_block}"]
     }
 
+    egress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
+    }  
 }
