@@ -30,9 +30,6 @@ You can use these in your terraform template with the following steps.
 module "sg_storm" {
   source = "github.com/terraform-community-modules/tf_aws_sg//sg_storm"
   security_group_name = "${var.security_group_name}-storm"
-  aws_access_key = "${var.aws_access_key}"
-  aws_secret_key = "${var.aws_secret_key}"
-  aws_region = "${var.aws_region}"
   vpc_id = "${var.vpc_id}"
   source_cidr_block = "${var.source_cidr_block}"
 }
@@ -40,9 +37,6 @@ module "sg_storm" {
 
 2. Setting values for the following variables, either through `terraform.tfvars` or `-var` arguments on the CLI
 
-- aws_access_key
-- aws_secret_key
-- aws_region
 - security_group_name
 - vpc_id
 - source_cidr_block

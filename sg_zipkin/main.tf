@@ -4,13 +4,6 @@
 // - Ports for Zipkin
 //
 
-// Provider specific configs
-provider "aws" {
-    access_key = "${var.aws_access_key}"
-    secret_key = "${var.aws_secret_key}"
-    region = "${var.aws_region}"
-}
-
 // Security Group Resource for Module
 resource "aws_security_group" "main_security_group" {
     name = "${var.security_group_name}"

@@ -10,9 +10,3 @@ variable "vpc_id" {
 variable "source_cidr_block" {
   description = "The source CIDR block to allow traffic from"
 }
-
-
-// Variables for providers used in this module
-variable "aws_access_key" {}
-variable "aws_secret_key" {}
-variable "aws_region" {}
