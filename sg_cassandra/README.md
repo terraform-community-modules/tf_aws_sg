@@ -27,9 +27,9 @@ You can use these in your terraform template with the following steps.
 1.) Adding a module resource to your template, e.g. `main.tf`
 
 ```
-module "sg_web" {
-  source = "github.com/terraform-community-modules/tf_aws_sg//sg_consul"
-  security_group_name = "${var.security_group_name}-consul"
+module "sg_cassandra" {
+  source = "github.com/terraform-community-modules/tf_aws_sg//sg_cassandra"
+  security_group_name = "${var.security_group_name}-cassandra"
   vpc_id = "${var.vpc_id}"
   source_cidr_block = "${var.source_cidr_block}"
 }
