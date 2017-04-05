@@ -1,7 +1,7 @@
 sg_elasticsearch terraform module
 =================================
 
-A terraform module with contains rules for a elasticsearch cluster
+A terraform module which contains rules for a elasticsearch cluster
 
 Ports
 -----

@@ -1,7 +1,7 @@
 sg_web terraform module
 =======================
 
-A terraform module with contains rules for a memcached, which
+A terraform module which contains rules for a memcached, which
 you can use with your service Terraform template.
 
 Ports

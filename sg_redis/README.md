@@ -1,7 +1,7 @@
 sg_redis terraform module
 =======================
 
-A terraform module with contains rules for a redis, which
+A terraform module which contains rules for a redis, which
 you can use with your service Terraform template.
 
 Ports
