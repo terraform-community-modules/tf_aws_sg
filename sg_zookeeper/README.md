@@ -1,7 +1,7 @@
 sg_zookeeper terraform module
 =======================
 
-A terraform module with contains rules for a zookeeper_cluster
+A terraform module which contains rules for a zookeeper_cluster
 
 Ports
 -----

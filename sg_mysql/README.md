@@ -1,7 +1,7 @@
 sg_mysql terraform module
 =======================
 
-A terraform module with contains rules for a mysql, which
+A terraform module which contains rules for a mysql, which
 you can use with your service Terraform template.
 
 Ports

@@ -1,7 +1,7 @@
 sg_ldap terraform module
 =======================
 
-A terraform module with contains rules for an LDAP server, which
+A terraform module which contains rules for an LDAP server, which
 you can use with your service Terraform template.
 
 Ports
