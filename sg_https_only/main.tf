@@ -12,4 +12,6 @@ resource "aws_security_group" "main_security_group" {
         cidr_blocks = ["${var.source_cidr_block}"]
     }
 
+    tags = "${merge(var.tags, map("Name", format("%s", var.security_group_name)))}"
+
 }
