@@ -41,6 +41,8 @@ service Terraform templates.
     - It allows incoming TCP 636 (LDAPS)
 - [sg_ldaps_only](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_ldaps_only) - This is a security group for LDAPS only
     - It allows incoming TCP 636 (LDAPS)
+- [sg_carbon-relay-ng](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_carbon-relay-ng) - This is a security group for carbon-relay-ng
+    - It allows incoming TCP 22 (SSH), TCP 2003 (carbon-in), 2004 (admin), 2013 (pickle), 8081 (GUI) and UDP 2003 (carbon-in), 2013 (pickle)
 
 
 Usage
