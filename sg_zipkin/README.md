@@ -6,7 +6,6 @@ A Terraform security group module for Zipkin
 
 Ports
 -----
-- TCP 22
 - TCP 9990 (zipkin admin port collector)
 - TCP 9901 (zipkin admin port query)
 - TCP 9991 (zipkin admin port web)
