@@ -7,7 +7,7 @@ you can use with your service Terraform template.
 Ports
 -----
 - TCP 636 (LDAPS)
-- TCP 22 (SSH)
+
 
 Input Variables
 ---------------

@@ -27,12 +27,4 @@ resource "aws_security_group" "main_security_group" {
     protocol    = "tcp"
     cidr_blocks = ["${var.source_cidr_block}"]
   }
-
-  // allow traffic for TCP 22 (SSH)
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["${var.source_cidr_block}"]
-  }
 }
