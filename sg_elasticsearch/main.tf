@@ -20,14 +20,6 @@ resource "aws_security_group" "main_security_group" {
     self      = true
   }
 
-  // allow traffic for TCP 22
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["${var.source_cidr_block}"]
-  }
-
   // allow traffic for TCP 9200 (REST Interface)
   ingress {
     from_port   = 9200
