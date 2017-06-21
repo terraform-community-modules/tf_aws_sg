@@ -25,14 +25,6 @@ resource "aws_security_group" "main_security_group" {
     self      = true
   }
 
-  // allow traffic for TCP 22 (SSH)
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["${var.source_cidr_block}"]
-  }
-
   // allow traffic for TCP 6667 (Kafka broker 0.8.1.x)
   ingress {
     from_port   = 6667
