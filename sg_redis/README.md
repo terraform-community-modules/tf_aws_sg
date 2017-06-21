@@ -6,7 +6,6 @@ you can use with your service Terraform template.
 
 Ports
 -----
-- TCP 22 (SSH)
 - TCP 6379 (redis)
 
 Input Variables
