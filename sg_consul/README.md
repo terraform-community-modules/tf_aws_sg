@@ -6,7 +6,6 @@ A Terraform security group module for Consul
 
 Ports
 -----
-- TCP 22
 - TCP 8300 (Server RPC)
 - TCP 8301 (Serf LAN)
 - UDP 8301 (Serf LAN)
