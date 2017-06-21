@@ -5,8 +5,6 @@ A terraform module which contains rules for a zookeeper_cluster
 
 Ports
 -----
-
-- TCP 22 (SSH)
 - TCP 2181
 - TCP 2888
 - TCP 3888
