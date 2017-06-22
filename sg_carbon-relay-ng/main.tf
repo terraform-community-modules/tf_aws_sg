@@ -3,73 +3,71 @@
 //
 //
 
-// Security Group Resource for Module
 resource "aws_security_group" "main_security_group" {
   name        = "${var.security_group_name}"
   description = "Security Group ${var.security_group_name}"
   vpc_id      = "${var.vpc_id}"
+}
 
-  // allows traffic from the SG itself for tcp
-  ingress {
-    from_port = 0
-    to_port   = 65535
-    protocol  = "tcp"
-    self      = true
-  }
+// Allow any internal network flow.
+resource "aws_security_group_rule" "ingress_any_any_self" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 0
+  to_port           = 65535
+  protocol          = "-1"
+  self              = true
+}
 
-  // allows traffic from the SG itself for udp
-  ingress {
-    from_port = 0
-    to_port   = 65535
-    protocol  = "udp"
-    self      = true
-  }
+// Allow: TCP:2003
+resource "aws_security_group_rule" "ingress_tcp_2003_cidr" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 2003
+  to_port           = 2003
+  protocol          = "tcp"
+  cidr_blocks       = ["${var.source_cidr_block}"]
+}
 
-  // allow traffic for TCP 2003 (for carbon line-in)
-  ingress {
-    from_port   = 2003
-    to_port     = 2003
-    protocol    = "tcp"
-    cidr_blocks = ["${var.source_cidr_block}"]
-  }
+// Allow: UDP:2013
+resource "aws_security_group_rule" "ingress_udp_2003_cidr" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 2003
+  to_port           = 2003
+  protocol          = "udp"
+  cidr_blocks       = ["${var.source_cidr_block}"]
+}
 
-  // allow traffic for UDP 2003 (for carbon line-in)
-  ingress {
-    from_port   = 2003
-    to_port     = 2003
-    protocol    = "udp"
-    cidr_blocks = ["${var.source_cidr_block}"]
-  }
+// Allow: TCP:2013 for Pickle.
+resource "aws_security_group_rule" "ingress_tcp_2013_cidr" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 2013
+  to_port           = 2013
+  protocol          = "tcp"
+  cidr_blocks       = ["${var.source_cidr_block}"]
+}
 
-  // allow traffic for TCP 2013 (for pickle)
-  ingress {
-    from_port   = 2013
-    to_port     = 2013
-    protocol    = "tcp"
-    cidr_blocks = ["${var.source_cidr_block}"]
-  }
+// Allow: UDP:2013 for Pickle.
+resource "aws_security_group_rule" "ingress_udp_2013_cidr" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 2013
+  to_port           = 2013
+  protocol          = "udp"
+  cidr_blocks       = ["${var.source_cidr_block}"]
+}
 
-  // allow traffic for UDP 2013 (for pickle)
-  ingress {
-    from_port   = 2013
-    to_port     = 2013
-    protocol    = "udp"
-    cidr_blocks = ["${var.source_cidr_block}"]
-  }
+// Allow: TCP:2004 for Admin port.
+resource "aws_security_group_rule" "ingress_tcp_2004_cidr" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 2004
+  to_port           = 2004
+  protocol          = "tcp"
+  cidr_blocks       = ["${var.source_cidr_block}"]
+}
 
-  // allow traffic for TCP 2004 (admin port)
-  ingress {
-    from_port   = 2004
-    to_port     = 2004
-    protocol    = "tcp"
-    cidr_blocks = ["${var.source_cidr_block}"]
-  }
-
-  // allow traffic for TCP 8081 (for GUI)
-  ingress {
-    from_port   = 8081
-    to_port     = 8081
-    protocol    = "tcp"
-    cidr_blocks = ["${var.source_cidr_block}"]
-  }
+// Allow: TCP:8081 for graphical user interface.
+resource "aws_security_group_rule" "ingress_tcp_8081_cidr" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 8081
+  to_port           = 8081
+  protocol          = "tcp"
+  cidr_blocks       = ["${var.source_cidr_block}"]
 }
