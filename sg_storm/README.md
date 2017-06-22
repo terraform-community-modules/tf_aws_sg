@@ -6,7 +6,6 @@ A Terraform security group module for Apache Storm Cluster
 
 Ports
 -----
-- TCP 22
 - TCP 6627 (Default Nimbus port)
 - TCP 8080 (Storm UI)
 - TCP 6700, 6701, 6702, 6703 (Default Supervisor port)

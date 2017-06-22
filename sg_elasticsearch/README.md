@@ -6,7 +6,6 @@ A terraform module which contains rules for a elasticsearch cluster
 Ports
 -----
 
-- TCP 22 (SSH)
 - TCP 9200 (REST Interface)
 - TCP 9300 (Java Interface)
 

@@ -6,7 +6,7 @@ A Terraform security group module for Nomad
 
 Ports
 -----
-- TCP 22
+
 - TCP 4646 (HTTP)
 - TCP 4647 (RPC)
 - TCP 4648 (Serf)

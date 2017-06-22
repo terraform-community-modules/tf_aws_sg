@@ -6,7 +6,6 @@ A Terraform security group module for carbon-relay-ng
 
 Ports
 -----
-- TCP 22
 - TCP 2003 (carbon-relay-ng carbon line-in)
 - UDP 2003 (carbon-relay-ng carbon line-in)
 - TCP 2013 (carbon-relay-ng carbon pickle)

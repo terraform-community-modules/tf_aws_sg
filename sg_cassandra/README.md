@@ -6,7 +6,6 @@ A Terraform security group module for Cassandra
 
 Ports
 -----
-- TCP 22
 - TCP 7199 (JMX)
 - TCP 9042 (Cassandra clients)
 - TCP 9160 (Cassandra Thrift clients)

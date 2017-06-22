@@ -4,10 +4,10 @@ resource "aws_security_group" "main_security_group" {
   description = "Security Group ${var.security_group_name}"
   vpc_id      = "${var.vpc_id}"
 
-  // allow traffic for TCP 636
+  // allows traffic for TCP 22 (SSH)
   ingress {
-    from_port   = 636
-    to_port     = 636
+    from_port   = 22
+    to_port     = 22
     protocol    = "tcp"
     cidr_blocks = ["${var.source_cidr_block}"]
   }
