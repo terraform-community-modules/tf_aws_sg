@@ -18,7 +18,7 @@ resource "aws_security_group_rule" "ingress_any_any_self" {
   self              = true
 }
 
-// Allow: TCP:2003
+// Allow: TCP:2003 for carbon line-in.
 resource "aws_security_group_rule" "ingress_tcp_2003_cidr" {
   security_group_id = "${aws_security_group.main_security_group.id}"
   from_port         = 2003
@@ -27,7 +27,7 @@ resource "aws_security_group_rule" "ingress_tcp_2003_cidr" {
   cidr_blocks       = ["${var.source_cidr_block}"]
 }
 
-// Allow: UDP:2013
+// Allow: UDP:2013 for carbon line-in.
 resource "aws_security_group_rule" "ingress_udp_2003_cidr" {
   security_group_id = "${aws_security_group.main_security_group.id}"
   from_port         = 2003
