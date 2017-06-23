@@ -32,7 +32,7 @@ service Terraform templates.
 - [sg_mysql](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_mysql) - This is a security group for MySQL
     - It allows incoming TCP 3306 (MySQL)
 - [sg_elasticsearch](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_elasticsearch) - This is a security group for ElasticSearch
-    - It allows incoming TCP 9200 (REST Interface), 9300 (Java Interface)
+    - It allows incoming TCP 9200 (REST Interface)
 - [sg_storm](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_storm) - This is a security group for Apache Storm Cluster
     - It allows incoming TCP 6627 (Default Nimbus port), TCP 8080 (Storm UI), TCP 6700, 6701, 6702, 6703 (Default Supervisor port)
 - [sg_zipkin](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_zipkin) - This is a security group for Zipkin
