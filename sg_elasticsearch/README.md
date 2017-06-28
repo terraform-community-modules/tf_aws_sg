@@ -7,7 +7,6 @@ Ports
 -----
 
 - TCP 9200 (REST Interface)
-- TCP 9300 (Java Interface)
 
 Input Variables
 ---------------

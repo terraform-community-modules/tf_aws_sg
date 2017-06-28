@@ -27,12 +27,4 @@ resource "aws_security_group" "main_security_group" {
     protocol    = "tcp"
     cidr_blocks = ["${var.source_cidr_block}"]
   }
-
-  // allow traffic for TCP 9300 (Java Interface)
-  ingress {
-    from_port   = 9300
-    to_port     = 9300
-    protocol    = "tcp"
-    cidr_blocks = ["${var.source_cidr_block}"]
-  }
 }
