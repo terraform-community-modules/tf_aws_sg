@@ -3,13 +3,6 @@ resource "aws_security_group" "main_security_group" {
   name        = "${var.security_group_name}"
   description = "Security Group ${var.security_group_name}"
   vpc_id      = "${var.vpc_id}"
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
 }
 
 // Allow any internal network flow.
@@ -20,6 +13,14 @@ resource "aws_security_group_rule" "ingress_any_any_self" {
   protocol          = "-1"
   self              = true
   type              = "ingress"
+}
+
+// Allow egress all
+resource "aws_security_group_rule" "egress_all_all_all" {
+  from_port   = 0
+  to_port     = 0
+  protocol    = "-1"
+  cidr_blocks = ["0.0.0.0/0"]
 }
 
 // Allow TCP:80 (HTTP)
