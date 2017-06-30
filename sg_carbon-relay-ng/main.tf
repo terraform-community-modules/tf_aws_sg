@@ -25,7 +25,7 @@ resource "aws_security_group_rule" "ingress_tcp_2003_cidr" {
   from_port         = 2003
   to_port           = 2003
   protocol          = "tcp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
 
@@ -35,7 +35,7 @@ resource "aws_security_group_rule" "ingress_udp_2003_cidr" {
   from_port         = 2003
   to_port           = 2003
   protocol          = "udp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
 
@@ -45,7 +45,7 @@ resource "aws_security_group_rule" "ingress_tcp_2013_cidr" {
   from_port         = 2013
   to_port           = 2013
   protocol          = "tcp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
 
@@ -55,7 +55,7 @@ resource "aws_security_group_rule" "ingress_udp_2013_cidr" {
   from_port         = 2013
   to_port           = 2013
   protocol          = "udp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
 
@@ -65,7 +65,7 @@ resource "aws_security_group_rule" "ingress_tcp_2004_cidr" {
   from_port         = 2004
   to_port           = 2004
   protocol          = "tcp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
 
@@ -75,6 +75,6 @@ resource "aws_security_group_rule" "ingress_tcp_8081_cidr" {
   from_port         = 8081
   to_port           = 8081
   protocol          = "tcp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }

@@ -27,7 +27,7 @@ resource "aws_security_group_rule" "ingress_tcp_8300_self" {
   from_port         = 8300
   to_port           = 8300
   protocol          = "tcp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
 
@@ -37,7 +37,7 @@ resource "aws_security_group_rule" "ingress_tcp_8500_self" {
   from_port         = 8500
   to_port           = 8500
   protocol          = "tcp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
 
@@ -47,7 +47,7 @@ resource "aws_security_group_rule" "ingress_tcp_8301_self" {
   from_port         = 8301
   to_port           = 8301
   protocol          = "tcp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
 
@@ -57,7 +57,7 @@ resource "aws_security_group_rule" "ingress_udp_8301_self" {
   from_port         = 8301
   to_port           = 8301
   protocol          = "udp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
 
@@ -67,7 +67,7 @@ resource "aws_security_group_rule" "ingress_tcp_8600_self" {
   from_port         = 8600
   to_port           = 8600
   protocol          = "tcp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
 
@@ -77,6 +77,6 @@ resource "aws_security_group_rule" "ingress_udp_8600_self" {
   from_port         = 8600
   to_port           = 8600
   protocol          = "udp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }

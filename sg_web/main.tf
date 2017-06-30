@@ -20,7 +20,7 @@ resource "aws_security_group_rule" "egress_all_all_all" {
   from_port   = 0
   to_port     = 0
   protocol    = "-1"
-  cidr_blocks = ["0.0.0.0/0"]
+  cidr_blocks = "0.0.0.0/0"
 }
 
 // Allow TCP:80 (HTTP)
@@ -29,7 +29,7 @@ resource "aws_security_group_rule" "ingress_tcp_80_cidr" {
   from_port         = 80
   to_port           = 80
   protocol          = "tcp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
 
@@ -39,7 +39,7 @@ resource "aws_security_group_rule" "ingress_tcp_443_cidr" {
   from_port         = 443
   to_port           = 443
   protocol          = "tcp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
 
@@ -49,7 +49,7 @@ resource "aws_security_group_rule" "ingress_tcp_1099_cidr" {
   from_port         = 1099
   to_port           = 1099
   protocol          = "tcp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
 
@@ -59,6 +59,6 @@ resource "aws_security_group_rule" "ingress_tcp_8080_cidr" {
   from_port         = 8080
   to_port           = 8080
   protocol          = "tcp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }

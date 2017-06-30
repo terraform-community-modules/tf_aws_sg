@@ -20,7 +20,7 @@ resource "aws_security_group_rule" "ingress_tcp_9200_self" {
   from_port         = 9200
   to_port           = 9200
   protocol          = "tcp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
 
@@ -30,6 +30,6 @@ resource "aws_security_group_rule" "ingress_tcp_9300_self" {
   from_port         = 9300
   to_port           = 9300
   protocol          = "tcp"
-  cidr_blocks       = ["${var.source_cidr_block}"]
+  cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
