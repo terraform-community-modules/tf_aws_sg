@@ -3,10 +3,9 @@
 //
 //
 
-// Security Group Resource for Module
 resource "aws_security_group" "main_security_group" {
   name        = "${var.security_group_name}"
-  description = "Security Group ${var.security_group_name}"
+  description = "tf-sg-${var.security_group_name}"
   vpc_id      = "${var.vpc_id}"
 }
 
