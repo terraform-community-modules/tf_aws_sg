@@ -18,6 +18,7 @@ resource "aws_security_group_rule" "ingress_any_any_self" {
   to_port           = 65535
   protocol          = "-1"
   self              = true
+  type              = "ingress"
 }
 
 // Allow TCP:9042 (Cassandra clients).
@@ -27,6 +28,7 @@ resource "aws_security_group_rule" "ingress_tcp_9042_self" {
   to_port           = 9042
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:9160 (Cassandra Thrift clients)
@@ -36,6 +38,7 @@ resource "aws_security_group_rule" "ingress_tcp_9160_self" {
   to_port           = 9160
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:7199 (JMX)
@@ -45,4 +48,5 @@ resource "aws_security_group_rule" "ingress_tcp_7199_self" {
   to_port           = 7199
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }

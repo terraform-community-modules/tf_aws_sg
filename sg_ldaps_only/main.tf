@@ -12,4 +12,5 @@ resource "aws_security_group_rule" "ingress_tcp_636_cidr" {
   to_port           = 636
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }

@@ -19,6 +19,7 @@ resource "aws_security_group_rule" "ingress_any_any_self" {
   to_port           = 65535
   protocol          = "-1"
   self              = true
+  type              = "ingress"
 }
 
 // Allow TCP:80 (HTTP)
@@ -28,6 +29,7 @@ resource "aws_security_group_rule" "ingress_tcp_80_cidr" {
   to_port           = 80
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:443 (HTTPS)
@@ -37,6 +39,7 @@ resource "aws_security_group_rule" "ingress_tcp_443_cidr" {
   to_port           = 443
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:1099 (JMX)
@@ -46,6 +49,7 @@ resource "aws_security_group_rule" "ingress_tcp_1099_cidr" {
   to_port           = 1099
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:8080 (HTTP-ALT)
@@ -55,4 +59,5 @@ resource "aws_security_group_rule" "ingress_tcp_8080_cidr" {
   to_port           = 8080
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }

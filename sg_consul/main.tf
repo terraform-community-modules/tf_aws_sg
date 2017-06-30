@@ -18,6 +18,7 @@ resource "aws_security_group_rule" "ingress_any_any_self" {
   to_port           = 65535
   protocol          = "-1"
   self              = true
+  type              = "ingress"
 }
 
 // Allow TCP:8300 (Server RPC).
@@ -27,6 +28,7 @@ resource "aws_security_group_rule" "ingress_tcp_8300_self" {
   to_port           = 8300
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:8500 (Consul Web UI).
@@ -36,6 +38,7 @@ resource "aws_security_group_rule" "ingress_tcp_8500_self" {
   to_port           = 8500
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:8301 (Serf LAN).
@@ -45,6 +48,7 @@ resource "aws_security_group_rule" "ingress_tcp_8301_self" {
   to_port           = 8301
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow UDP:8301 (Serf LAN).
@@ -54,6 +58,7 @@ resource "aws_security_group_rule" "ingress_udp_8301_self" {
   to_port           = 8301
   protocol          = "udp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:8600 (Consul DNS).
@@ -63,6 +68,7 @@ resource "aws_security_group_rule" "ingress_tcp_8600_self" {
   to_port           = 8600
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow UDP:8600 (Consul DNS).
@@ -72,4 +78,5 @@ resource "aws_security_group_rule" "ingress_udp_8600_self" {
   to_port           = 8600
   protocol          = "udp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }

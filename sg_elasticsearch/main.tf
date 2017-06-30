@@ -21,6 +21,7 @@ resource "aws_security_group_rule" "ingress_tcp_9200_self" {
   to_port           = 9200
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:9300 (Java interface).
@@ -30,4 +31,5 @@ resource "aws_security_group_rule" "ingress_tcp_9300_self" {
   to_port           = 9300
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }

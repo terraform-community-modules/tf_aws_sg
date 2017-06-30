@@ -17,6 +17,7 @@ resource "aws_security_group_rule" "ingress_any_any_self" {
   to_port           = 65535
   protocol          = "-1"
   self              = true
+  type              = "ingress"
 }
 
 // Allow TCP:6667 (Kafka broker 0.8.1.x)
@@ -26,6 +27,7 @@ resource "aws_security_group_rule" "ingress_tcp_6667_cidr" {
   to_port           = 6667
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:9092 (Kafka broker 0.8.2+)
@@ -35,4 +37,5 @@ resource "aws_security_group_rule" "ingress_tcp_9092_cidr" {
   to_port           = 9092
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }

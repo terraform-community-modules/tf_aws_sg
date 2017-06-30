@@ -17,6 +17,7 @@ resource "aws_security_group_rule" "ingress_any_any_self" {
   to_port           = 65535
   protocol          = "-1"
   self              = true
+  type              = "ingress"
 }
 
 // Allow TCP:6627 (Nimbus)
@@ -26,6 +27,7 @@ resource "aws_security_group_rule" "ingress_tcp_6627_cidr" {
   to_port           = 6627
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:8080 (Storm UI)
@@ -35,6 +37,7 @@ resource "aws_security_group_rule" "ingress_tcp_8080_cidr" {
   to_port           = 8080
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:6700-6703 (Supervisor)
@@ -44,4 +47,5 @@ resource "aws_security_group_rule" "ingress_tcp_6703_cidr" {
   to_port           = 6703
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }

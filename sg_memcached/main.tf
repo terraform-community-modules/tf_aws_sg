@@ -12,6 +12,7 @@ resource "aws_security_group_rule" "ingress_any_any_self" {
   to_port           = 65535
   protocol          = "-1"
   self              = true
+  type              = "ingress"
 }
 
 // Allow TCP:11211 (Memcached)
@@ -21,4 +22,5 @@ resource "aws_security_group_rule" "ingress_tcp_11211_cidr" {
   to_port           = 11211
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }

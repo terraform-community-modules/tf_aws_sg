@@ -16,6 +16,7 @@ resource "aws_security_group_rule" "ingress_any_any_self" {
   to_port           = 65535
   protocol          = "-1"
   self              = true
+  type              = "ingress"
 }
 
 // Allow: TCP:2003 for carbon line-in.
@@ -25,6 +26,7 @@ resource "aws_security_group_rule" "ingress_tcp_2003_cidr" {
   to_port           = 2003
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow: UDP:2013 for carbon line-in.
@@ -34,6 +36,7 @@ resource "aws_security_group_rule" "ingress_udp_2003_cidr" {
   to_port           = 2003
   protocol          = "udp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow: TCP:2013 for Pickle.
@@ -43,6 +46,7 @@ resource "aws_security_group_rule" "ingress_tcp_2013_cidr" {
   to_port           = 2013
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow: UDP:2013 for Pickle.
@@ -52,6 +56,7 @@ resource "aws_security_group_rule" "ingress_udp_2013_cidr" {
   to_port           = 2013
   protocol          = "udp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow: TCP:2004 for Admin port.
@@ -61,6 +66,7 @@ resource "aws_security_group_rule" "ingress_tcp_2004_cidr" {
   to_port           = 2004
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow: TCP:8081 for graphical user interface.
@@ -70,4 +76,5 @@ resource "aws_security_group_rule" "ingress_tcp_8081_cidr" {
   to_port           = 8081
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }

@@ -18,6 +18,7 @@ resource "aws_security_group_rule" "ingress_any_any_self" {
   to_port           = 65535
   protocol          = "-1"
   self              = true
+  type              = "ingress"
 }
 
 // Allow TCP:4646 (Nomad HTTP)
@@ -27,6 +28,7 @@ resource "aws_security_group_rule" "ingress_tcp_4646_cidr" {
   to_port           = 4646
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:4647 (Nomad RPC)
@@ -36,6 +38,7 @@ resource "aws_security_group_rule" "ingress_tcp_4647_cidr" {
   to_port           = 4647
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:4648 (Serf)
@@ -45,6 +48,7 @@ resource "aws_security_group_rule" "ingress_tcp_4648_cidr" {
   to_port           = 4648
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow UDP:4648 (Serf)
@@ -54,4 +58,5 @@ resource "aws_security_group_rule" "ingress_udp_4648_cidr" {
   to_port           = 4648
   protocol          = "udp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }

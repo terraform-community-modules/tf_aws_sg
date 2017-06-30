@@ -12,6 +12,7 @@ resource "aws_security_group_rule" "ingress_any_any_self" {
   to_port           = 65535
   protocol          = "-1"
   self              = true
+  type              = "ingress"
 }
 
 // Allow TCP:3306 (MySQL)
@@ -21,4 +22,5 @@ resource "aws_security_group_rule" "ingress_tcp_3306_cidr" {
   to_port           = 3306
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }

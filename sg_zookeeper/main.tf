@@ -12,6 +12,7 @@ resource "aws_security_group_rule" "ingress_any_any_self" {
   to_port           = 65535
   protocol          = "-1"
   self              = true
+  type              = "ingress"
 }
 
 // Allow TCP:2181 (Zookeeper)
@@ -21,6 +22,7 @@ resource "aws_security_group_rule" "ingress_tcp_2181_cidr" {
   to_port           = 2181
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:2888 (Zookeeper)
@@ -30,6 +32,7 @@ resource "aws_security_group_rule" "ingress_tcp_2888_cidr" {
   to_port           = 2888
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:7199 (JMX)
@@ -39,6 +42,7 @@ resource "aws_security_group_rule" "ingress_tcp_7199_cidr" {
   to_port           = 7199
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
 
 // Allow TCP:3888 (Zookeper)
@@ -48,4 +52,5 @@ resource "aws_security_group_rule" "ingress_tcp_3888_cidr" {
   to_port           = 3888
   protocol          = "tcp"
   cidr_blocks       = ["${var.source_cidr_block}"]
+  type              = "ingress"
 }
