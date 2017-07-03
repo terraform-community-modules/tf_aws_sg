@@ -3,49 +3,48 @@
 //
 //
 
-// Security Group Resource for Module
 resource "aws_security_group" "main_security_group" {
   name        = "${var.security_group_name}"
-  description = "Security Group ${var.security_group_name}"
+  description = "tf-sg-${var.security_group_name}"
   vpc_id      = "${var.vpc_id}"
+}
 
-  // allows traffic from the SG itself for tcp
-  ingress {
-    from_port = 0
-    to_port   = 65535
-    protocol  = "tcp"
-    self      = true
-  }
+// Allow any internal network flow.
+resource "aws_security_group_rule" "ingress_any_any_self" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 0
+  to_port           = 65535
+  protocol          = "-1"
+  self              = true
+  type              = "ingress"
+}
 
-  // allows traffic from the SG itself for udp
-  ingress {
-    from_port = 0
-    to_port   = 65535
-    protocol  = "udp"
-    self      = true
-  }
+// Allow TCP:6627 (Nimbus)
+resource "aws_security_group_rule" "ingress_tcp_6627_cidr" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 6627
+  to_port           = 6627
+  protocol          = "tcp"
+  cidr_blocks       = "${var.source_cidr_block}"
+  type              = "ingress"
+}
 
-  // allow traffic for TCP 6627 (Nimbus)
-  ingress {
-    from_port   = 6627
-    to_port     = 6627
-    protocol    = "tcp"
-    cidr_blocks = ["${var.source_cidr_block}"]
-  }
+// Allow TCP:8080 (Storm UI)
+resource "aws_security_group_rule" "ingress_tcp_8080_cidr" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 8080
+  to_port           = 8080
+  protocol          = "tcp"
+  cidr_blocks       = "${var.source_cidr_block}"
+  type              = "ingress"
+}
 
-  // allow traffic for TCP 8080 (Storm UI)
-  ingress {
-    from_port   = 8080
-    to_port     = 8080
-    protocol    = "tcp"
-    cidr_blocks = ["${var.source_cidr_block}"]
-  }
-
-  // allow traffic for TCP 6700-6703 (Supervisor)
-  ingress {
-    from_port   = 6700
-    to_port     = 6703
-    protocol    = "tcp"
-    cidr_blocks = ["${var.source_cidr_block}"]
-  }
+// Allow TCP:6700-6703 (Supervisor)
+resource "aws_security_group_rule" "ingress_tcp_6703_cidr" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 6700
+  to_port           = 6703
+  protocol          = "tcp"
+  cidr_blocks       = "${var.source_cidr_block}"
+  type              = "ingress"
 }
