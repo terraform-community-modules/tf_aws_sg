@@ -33,7 +33,7 @@ module "sg_zipkin" {
   source = "github.com/terraform-community-modules/tf_aws_sg//sg_zipkin"
   security_group_name = "${var.security_group_name}-zipkin"
   vpc_id = "${var.vpc_id}"
-  source_cidr_block = "${var.source_cidr_block}"
+  source_cidr_block = ["${var.source_cidr_block}"]
 }
 ```
 
