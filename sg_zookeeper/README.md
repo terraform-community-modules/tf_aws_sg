@@ -28,7 +28,7 @@ module "sg_zookeeper" {
   source = "github.com/terraform-community-modules/tf_aws_sg//sg_zookeeper"
   security_group_name = "${var.security_group_name}-zookeeper"
   vpc_id = "${var.vpc_id}"
-  source_cidr_block = "${var.source_cidr_block}"
+  source_cidr_block = ["${var.source_cidr_block}"]
 }
 ```
 
