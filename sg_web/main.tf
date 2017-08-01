@@ -21,10 +21,12 @@ resource "aws_security_group_rule" "ingress_any_any_self" {
 
 // Allow egress all
 resource "aws_security_group_rule" "egress_all_all_all" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
   from_port   = 0
   to_port     = 0
   protocol    = "-1"
-  cidr_blocks = "0.0.0.0/0"
+  cidr_blocks = ["0.0.0.0/0"]
+  type        = "egress"
 }
 
 // Allow TCP:80 (HTTP)
