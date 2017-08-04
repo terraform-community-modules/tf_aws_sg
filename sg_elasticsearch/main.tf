@@ -16,6 +16,7 @@ resource "aws_security_group_rule" "ingress_any_any_self" {
   to_port           = 65535
   protocol          = "-1"
   self              = true
+  type              = "ingress"
 }
 
 // Allow TCP:9200 (REST Interface).
