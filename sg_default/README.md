@@ -23,6 +23,7 @@ module "sg_default" {
   inbound_rules = {
     "0" = [ "${var.source_cidr_block}", "80", "80", "TCP" ]
     "1" = [ "${var.source_cidr_block}", "443", "443" "TCP" ]
+    "2" = [ "${var.another_source_cidr_block}", "1234", "4321" "UDP" ]
   }
   
   ### Outbound rules ###  
