@@ -13,29 +13,33 @@ A terraform module which contains default rules to create a specific security gr
 You can use these in your terraform template with the following steps.
 1. Adding a module resource to your template, e.g. main.tf
 ```
-module "f31_head_elb_sg" {
-  source = "https://github.com/ltartarini90/terraform-aws-modules/tree/master/sg_default"
+module "sg_default" {
+  source = "github.com/terraform-community-modules/tf_aws_sg//sg_default"
   sg_name = "${var.sg_name}"
+  sg_description = "Security Group managed by Terraform"
   vpc_id = "${var.vpc_id}"
   
   ### Inbound rules ###
   inbound_rules = {
-    "0" = [ "${var.source_cidr_block}", "80", "TCP" ]
-    "1" = [ "${var.source_cidr_block}", "443", "TCP" ]
+    "0" = [ "${var.source_cidr_block}", "80", "80", "TCP" ]
+    "1" = [ "${var.source_cidr_block}", "443", "443" "TCP" ]
   }
   
   ### Outbound rules ###  
   # outbound_rules = {
-    "0" = [ "0.0.0.0/0", "0", "-1" ]
+    "0" = [ "0.0.0.0/0", "0", "0", "-1" ]
   # }
 
   ### Tags ###  
   tags = {
+    Name = "${var.sg_name}"
+    Project = "test"
   }
 }
 ```
 2. Setting values for the following variables, either through terraform.tfvars or -var arguments on the CLI
 * sg_name
+* sg_description
 * vpc_id
 * inbound_rules
 * outbound_rules

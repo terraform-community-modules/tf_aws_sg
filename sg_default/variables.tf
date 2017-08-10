@@ -8,9 +8,7 @@ variable "inbound_rules" {
 }
 variable "outbound_rules" {
   type = "map"
-  default = {
-    "0" = [ "0.0.0.0/0", "0", "-1" ]
-  }
+
 }
 variable "tags" {
   type = "map"
