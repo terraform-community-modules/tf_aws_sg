@@ -48,6 +48,8 @@ service Terraform templates.
     - It allows incoming TCP 2003 (carbon-in), 2004 (admin), 2013 (pickle), 8081 (GUI) and UDP 2003 (carbon-in), 2013 (pickle)
 - [sg_openvpn](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_openvpn) - This is a security group for OpenVPN
     - It allows incoming UDP 1194 (OpenVPN)
+- [sg_docker_swarm](https://github.com/terraform-community-modules/tf_aws_sg/tree/master/sg_docker_swarm) - This is a security group for Docker Swarm
+    - It allows incoming TCP 2377 (Swarm management communication), 7946 (Swarm node communication), UDP 7946 (Swarm node communication), 4789 (Swarm overlay network communication)
 
 
 Usage
