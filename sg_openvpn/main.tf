@@ -28,3 +28,23 @@ resource "aws_security_group_rule" "ingress_udp_1194_cidr" {
   cidr_blocks       = "${var.source_cidr_block}"
   type              = "ingress"
 }
+
+// Allow TCP:943 (OpenVPN)
+resource "aws_security_group_rule" "ingress_tcp_943_cidr" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 943
+  to_port           = 943
+  protocol          = "tcp"
+  self              = true
+  type              = "ingress"
+}
+
+// Allow TCP:443 (OpenVPN)
+resource "aws_security_group_rule" "ingress_tcp_443_cidr" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 443
+  to_port           = 443
+  protocol          = "tcp"
+  cidr_blocks       = "${var.source_cidr_block}"
+  type              = "ingress"
+}
