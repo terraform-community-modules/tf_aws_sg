@@ -1,6 +1,12 @@
 // Module specific variables
 variable "security_group_name" {
   description = "The name for the security group"
+  default = "https"
+}
+
+variable "security_group_description" {
+  description = "The name for the security group"
+  default = "tf-sg-https"
 }
 
 variable "vpc_id" {
@@ -17,3 +23,4 @@ variable "tags" {
   description = "A map of tags to add to all resources"
   default     = {}
 }
+
