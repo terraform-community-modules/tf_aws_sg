@@ -59,6 +59,26 @@ resource "aws_security_group_rule" "ingress_udp_8301_self" {
   type              = "ingress"
 }
 
+// Allow TCP:8302 (Serf WAN).
+resource "aws_security_group_rule" "ingress_tcp_8302_self" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 8302
+  to_port           = 8302
+  protocol          = "tcp"
+  cidr_blocks       = "${var.source_cidr_block}"
+  type              = "ingress"
+}
+
+// Allow UDP:8302 (Serf WAN).
+resource "aws_security_group_rule" "ingress_udp_8302_self" {
+  security_group_id = "${aws_security_group.main_security_group.id}"
+  from_port         = 8302
+  to_port           = 8302
+  protocol          = "udp"
+  cidr_blocks       = "${var.source_cidr_block}"
+  type              = "ingress"
+}
+
 // Allow TCP:8600 (Consul DNS).
 resource "aws_security_group_rule" "ingress_tcp_8600_self" {
   security_group_id = "${aws_security_group.main_security_group.id}"

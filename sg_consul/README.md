@@ -9,6 +9,8 @@ Ports
 - TCP 8300 (Server RPC)
 - TCP 8301 (Serf LAN)
 - UDP 8301 (Serf LAN)
+- TCP 8302 (Serf WAN)
+- UDP 8302 (Serf WAN)
 - TCP 8400 (Consul RPC)
 - TCP 8500 (Consul HTTP API)
 - TCP 8600 (Consul DNS)
