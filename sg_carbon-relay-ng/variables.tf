@@ -1,6 +1,12 @@
 // Module specific variables
 variable "security_group_name" {
   description = "The name for the security group"
+  default = "carbon-relay-ng"
+}
+
+variable "security_group_description" {
+  description = "The name for the security group"
+  default = "tf-sg-carbon-relay-ng"
 }
 
 variable "vpc_id" {

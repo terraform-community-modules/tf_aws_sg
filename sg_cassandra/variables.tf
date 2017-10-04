@@ -1,6 +1,12 @@
 // Module specific variables
 variable "security_group_name" {
   description = "The name for the security group"
+  default = "cassandra"
+}
+
+variable "security_group_description" {
+  description = "The name for the security group"
+  default = "tf-sg-cassandra"
 }
 
 variable "vpc_id" {

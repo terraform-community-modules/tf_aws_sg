@@ -1,6 +1,12 @@
 // Module specific variables
 variable "security_group_name" {
   description = "The name for the security group"
+  default = "nomad"
+}
+
+variable "security_group_description" {
+  description = "The name for the security group"
+  default = "tf-sg-nomad"
 }
 
 variable "vpc_id" {
