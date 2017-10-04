@@ -1,6 +1,12 @@
 tf_aws_sg
 ======================
 
+# This module is deprecated and [terraform-aws-modules/terraform-aws-security-group module](https://github.com/terraform-aws-modules/terraform-aws-security-group) published on [the Terraform registry](https://registry.terraform.io/modules/terraform-aws-modules/security-group/aws) should be used instead.
+
+## This repository will not have active support any more.
+
+---
+
 A Terraform module which contains a number of common configurations for AWS security groups.
 * It assumes you're putting your SGs in a VPC.
 
